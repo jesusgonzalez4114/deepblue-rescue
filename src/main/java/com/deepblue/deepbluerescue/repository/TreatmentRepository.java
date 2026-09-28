@@ -42,4 +42,7 @@ public interface TreatmentRepository extends JpaRepository<Treatment, Long> {
         order by t.performedAt asc
         """)
     List<Treatment> findBySpecialistExpertise(@Param("expertiseName") String expertiseName);
+    List<Treatment> findByAnimalAnimalCodeOrderByPerformedAtAsc(
+            String animalCode);
+
 }

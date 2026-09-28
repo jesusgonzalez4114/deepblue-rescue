@@ -61,6 +61,7 @@ public class Specialist {
     public String getLastName() { return lastName; }
     public String getEmail() { return email; }
     public boolean isActive() { return active; }
+    public void setActive(boolean active) { this.active = active; }
     public Set<Expertise> getExpertiseAreas() { return expertiseAreas; }
     public List<Treatment> getTreatments() { return treatments; }
 }
