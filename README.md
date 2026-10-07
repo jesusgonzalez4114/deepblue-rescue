@@ -2,10 +2,6 @@
 
 Laboratorio práctico de persistencia con **Java 21**, **Spring Boot 4**, **Spring Data JPA**, **Hibernate**, **Flyway**, **PostgreSQL** y **Testcontainers**.
 
-Jesus Gonzalez-2023214046
-
-Anuar Hatum-2023214056
-
 ## Descripción
 
 DeepBlue Rescue es la capa de persistencia de una plataforma para organizaciones dedicadas al rescate y rehabilitación de fauna marina. El sistema modela el recorrido completo de un animal rescatado: desde que un centro registra un caso, pasando por su expediente médico, hasta los tratamientos realizados por distintos especialistas durante su rehabilitación.
@@ -65,7 +61,22 @@ Animal
 - Docker Desktop (o Docker Engine) corriendo — necesario para Testcontainers
 - Maven (o usar el wrapper `mvnw` / `mvnw.cmd` incluido en el proyecto)
 
+## Cómo ejecutar
 
+```bash
+# Compilar el proyecto
+./mvnw clean install        # Mac/Linux
+.\mvnw.cmd clean install    # Windows
+```
+
+Para correr la aplicación contra una base de datos PostgreSQL real (no necesaria para los tests), configura las variables de entorno `DB_URL`, `DB_USER` y `DB_PASSWORD`, o usa los valores por defecto de `application.yml` (`localhost:5432/deepblue`).
+
+## Cómo ejecutar los tests
+
+```bash
+./mvnw test        # Mac/Linux
+.\mvnw.cmd test     # Windows
+```
 
 Todos los tests están en `PersistenceIntegrationTest`, y corren contra un contenedor real de PostgreSQL levantado automáticamente por Testcontainers — Docker debe estar corriendo antes de ejecutar este comando.
 
